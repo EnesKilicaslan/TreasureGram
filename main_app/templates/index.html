@@ -1,0 +1,49 @@
+
+{% load static %}
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css"
+			 href="{% static 'bootstrap/css/bootstrap.min.css' %}" />
+		<link rel="stylesheet" type="text/css"
+			href="{% static 'style.css' %}" />
+		<title> TreasureGram </title>
+	</head>
+
+	<body>
+		
+		<nav class="navbar navbar-default navbar-static-top text-center">
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="Search">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+		</nav>
+
+		<main class="container" role="main">
+			<div class="treasure panel panel-default">
+
+				<h1> Treasuersssss! </h1>
+				
+				{% for treasure in treasures %}
+				
+				<div class="panel-heading">
+					<h2 class="panel-title"> {{ treasure.name }} </h2>
+				</div>
+
+				<div class="panel-body">
+
+					{{ treasure.value }} :: 
+					{{ treasure.material }} :: 
+					{{ treasure.location }} 
+				</div>
+
+				{% endfor %}
+			</div>
+		</main>
+	</body>
+
+</html>
+
+
+
